@@ -104,9 +104,7 @@ final class DatabaseManager{
         })
     }
     
-    // MARK: Conversations
     
-    /// creates a new conversation with target user email and first message sent
     public func createNewConversation(otherUserEmail: String, name:String, firstMessage: Message, completion: @escaping (Bool) -> Void) {
         guard let email = UserDefaults.standard.value(forKey: "email") as? String, let myName = UserDefaults.standard.value(forKey: "name")  else {
             print("null")
@@ -274,7 +272,7 @@ final class DatabaseManager{
         })
     }
     
-    /// Fetches and returns all conversations for the user with
+    
     public func getAllConversations(for email: String, completion: @escaping (Result<[Conversation], Error>) -> Void) {
         database.child("\(email)/conversations").observe(.value, with: {
             snapshot in

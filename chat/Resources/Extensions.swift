@@ -1,11 +1,5 @@
 //
 //  Extensions.swift
-//  chat
-//
-//  Created by administrator on 08/01/2022.
-//
-//
-//  Extensions.swift
 //  ChatApp
 //
 //  Created by Mohammad Al-haddad on 01/01/2022.
@@ -14,10 +8,43 @@
 import Foundation
 import UIKit
 
+extension LoginViewController {
+    func roundedUI(){
+        emailField.layer.cornerRadius = 12
+        emailField.layer.borderWidth = 1
+        emailField.layer.masksToBounds = true
+        
+        passwordField.layer.cornerRadius = 12
+        passwordField.layer.borderWidth = 1
+        passwordField.layer.masksToBounds = true
+        
+        loginBtn.layer.cornerRadius = 12
+        loginBtn.layer.masksToBounds = true
+        
+    }
+}
 
 extension SignUppViewController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func roundedUI(){
-
+        
+        firstNameField.layer.cornerRadius = 12
+        firstNameField.layer.borderWidth = 1
+        firstNameField.layer.masksToBounds = true
+        
+        lastNameField.layer.cornerRadius = 12
+        lastNameField.layer.borderWidth = 1
+        lastNameField.layer.masksToBounds = true
+        
+        emailField.layer.cornerRadius = 12
+        emailField.layer.borderWidth = 1
+        emailField.layer.masksToBounds = true
+        
+        passwordField.layer.cornerRadius = 12
+        passwordField.layer.borderWidth = 1
+        passwordField.layer.masksToBounds = true
+        
+        registerBtn.layer.cornerRadius = 12
+        registerBtn.layer.masksToBounds = true
         
         profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
         profileImage.layer.masksToBounds = true
