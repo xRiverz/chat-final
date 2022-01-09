@@ -26,7 +26,6 @@ class SignUppViewController: UIViewController {
 
         override func viewDidLoad() {
             super.viewDidLoad()
-            title = "Register"
             roundedUI()
             let tapGR = UITapGestureRecognizer(target: self, action: #selector(didImageTapped))
             profileImage.addGestureRecognizer(tapGR)
