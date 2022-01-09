@@ -140,25 +140,39 @@ class MessageViewController: UIViewController {
     
     func validateAuth() {
         if Auth.auth().currentUser == nil {
-            let loginVC = storyboard?.instantiateViewController(identifier: "LoginVC") as! LoginViewController
+            let loginVC = storyboard?.instantiateViewController(identifier: "Main") as! HomeViewController
             let nav = UINavigationController(rootViewController: loginVC)
             nav.modalPresentationStyle = .fullScreen
             present(nav, animated: false)
         }
     }
 }
+    
 
 extension MessageViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        conversations.count
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let conv = conversations[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! ConversationCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as! MessageCell
+        cell.convMessage.text = conv.latestMessage
+        cell.convName.text = conv.name
         
-        cell.configure(with: conv)
+        let path = "images/\(conv.otherEmail)_profile_picture.png"
+        
+        StorageManager.shared.downloadURL(for: path, completion: {result in
+            switch result {
+            case .success(let url):
+                DispatchQueue.main.async {
+                    //cell.image.sd_setImage(with: url, completed: nil)
+                    cell.imageView?.sd_setImage(with: url, completed: nil)
+                }
+            case .failure(let erorr):
+                print("faild to get url image : \(erorr)")
+            }
+        })
         
         return cell
     }
@@ -166,12 +180,14 @@ extension MessageViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let conv = conversations[indexPath.row]
-        
+        let ChatVC = MessageViewController().self
+        ChatVC.title = conv.name
+        ChatVC.navigationController?.pushViewController(ChatVC, animated: true)
         openConversation(conversation:conv)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        120
+        return 120
     }
     
     func openConversation(conversation:Conversation){

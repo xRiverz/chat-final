@@ -1,8 +1,8 @@
 //
 //  Extensions.swift
-//  ChatApp
+//  Chat
 //
-//  Created by Mohammad Al-haddad on 01/01/2022.
+//  Created by administrator on 05/01/2022.
 //
 
 import Foundation

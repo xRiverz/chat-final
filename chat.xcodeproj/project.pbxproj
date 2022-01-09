@@ -99,7 +99,6 @@
 		C3AA87822789FB470041C300 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		C3AA8784278A00EE0041C300 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		C3AA8786278A146D0041C300 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
-		C3AA8789278A601A0041C300 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +170,6 @@
 		C38623F32785F8B2004ACA09 /* chat */ = {
 			isa = PBXGroup;
 			children = (
-				C3AA8788278A5FF50041C300 /* Model */,
 				C386244327860774004ACA09 /* chat.entitlements */,
 				C3AA871F2787215E0041C300 /* Resources */,
 				C3AA871C2787212F0041C300 /* Views */,
@@ -239,14 +237,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C3AA8788278A5FF50041C300 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				C3AA8789278A601A0041C300 /* GoogleService-Info.plist */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

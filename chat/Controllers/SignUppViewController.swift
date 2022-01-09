@@ -70,7 +70,8 @@ class SignUppViewController: UIViewController {
                             guard let image = strongSelf.profileImage.image, let data = image.pngData() else {
                                 return
                             }
-                            let fileName = user.profileImage
+                            let safeEmail = DatabaseManager.safeEmail(with: email)
+                            let fileName = "\(safeEmail)_profile_picture.png"
                             StorageManager.shared.uploadImage(with: data, fileName: fileName, completion: {
                                 result in
                                 switch result{

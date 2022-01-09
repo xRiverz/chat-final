@@ -36,7 +36,8 @@ final class StorageManager{
                 }
                 
                 let urlString = url.absoluteString
-                completion(.success(urlString))
+                print(urlString)
+               completion(.success(urlString))
                 
             })
         })

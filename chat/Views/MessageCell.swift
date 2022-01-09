@@ -7,11 +7,12 @@
 
 import UIKit
 import SDWebImage
-class ConversationCell: UITableViewCell {
+class MessageCell: UITableViewCell {
     
     @IBOutlet weak var convImg: UIImageView!
     @IBOutlet weak var convName: UILabel!
     @IBOutlet weak var convMessage: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

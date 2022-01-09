@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
             let registerVC = storyboard?.instantiateViewController(identifier: "RegisterVC") as! SignUppViewController
             navigationController?.pushViewController(registerVC, animated: true)
         }
-        
+
         @IBAction func loginButtonPressed(_ sender:UIButton){
             
             guard let email = emailField.text, let password = passwordField.text else {
@@ -72,6 +72,7 @@ class LoginViewController: UIViewController {
                 UserDefaults.standard.setValue(email, forKey: "email")
                 
                 strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+               
             })
         }
         

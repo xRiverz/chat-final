@@ -20,6 +20,8 @@ class ProfileViewController: UIViewController {
             
             profileImage.layer.cornerRadius = profileImage.frame.size.height / 2
             profileImage.layer.masksToBounds = true
+
+            //imageView.sd_setImage(with: URL(string: "http://www.domain.com/path/to/image.jpg"), placeholderImage: UIImage(named: "placeholder.png"))
             
             
             guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
@@ -44,7 +46,7 @@ class ProfileViewController: UIViewController {
             
             
             
-            let loginVC = storyboard?.instantiateViewController(identifier: "LoginVC") as! LoginViewController
+            let loginVC = storyboard?.instantiateViewController(identifier: "Main") as! HomeViewController
             let nav = UINavigationController(rootViewController: loginVC)
             nav.modalPresentationStyle = .fullScreen
             tabBarController?.present(nav, animated: true, completion: {
@@ -56,6 +58,7 @@ class ProfileViewController: UIViewController {
         }
         
         func setProfileImage(_ email: String) {
+        
             let safeEmail = DatabaseManager.safeEmail(with: email)
             let fileName = "\(safeEmail)_profile_picture.png"
             let path = "images/\(fileName)"
@@ -63,7 +66,9 @@ class ProfileViewController: UIViewController {
             StorageManager.shared.downloadURL(for: path, completion: {result in
                 switch result {
                 case .success(let url):
-                    self.profileImage.sd_setImage(with: url, placeholderImage: UIImage(systemName: "person.circle"))
+                    DispatchQueue.main.async {
+                        self.profileImage.sd_setImage(with: url, placeholderImage: UIImage(systemName: "person.circle"))
+                    }
                 case .failure(let error):
                     print(error)
                 }

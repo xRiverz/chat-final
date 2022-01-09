@@ -17,8 +17,8 @@ class NewMessageViewController: UIViewController {
     
     var completion : ((SearchResult) -> (Void))?
     
-    var users : [[String:String]] = [] // used to fetch users from DB
-    var results : [SearchResult] = [] // filtered users based on search and used for table
+    var users = [[String:String]] ()
+    var results = [SearchResult] ()
     var hasFetced = false
     
     private var searchBar: UISearchBar = {
@@ -39,9 +39,13 @@ class NewMessageViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+     func vewDidLayout() {
+        super.viewDidLoad()
+        noLabel.frame = CGRect(x : 0.0, y : 0.0, width: 200.0, height: 200.0)
+    }
     
     @objc func didCancelTapped(){
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -49,12 +53,12 @@ class NewMessageViewController: UIViewController {
 extension NewMessageViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        results.count
+        return results.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-                
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = results[indexPath.row].name
         
         return cell
@@ -72,31 +76,29 @@ extension NewMessageViewController : UITableViewDelegate, UITableViewDataSource 
 extension NewMessageViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
+        guard let text = searchBar.text, !text.isEmpty else {
             return
         }
         
         searchBar.resignFirstResponder()
-        
-        spinner.show(in: view)
-        
-        searchUsers(query: text)
+        results.removeAll()
+        self.searchUsers(query: text)
     }
     
     func searchUsers(query:String){
         if hasFetced {
             filterUsers(term: query)
         }else {
-            DatabaseManager.shared.getAllUsers(completion: {
-                [weak self] result in
-                switch result {
-                case .success(let users):
-                    self?.users = users
-                    self?.hasFetced = true
-                    self?.filterUsers(term: query)
-                case .failure(let error):
-                    print(error.localizedDescription)
+            DatabaseManager.shared.getAllUsers(completion: { results in
+                switch results {
+                case .success(let userCollection):
+                    self.hasFetced = true
+                    self.users = userCollection
+                    self.filterUsers(term:"" )
+                case .failure(let erorr):
+                    print("faild to get users:\(erorr)")
                 }
+            
             })
         }
         
@@ -107,36 +109,26 @@ extension NewMessageViewController : UISearchBarDelegate {
             return
         }
         
-        let results : [SearchResult] = self.users.filter({
+        let result : [[String:String]] = self.users.filter({
             guard let name = $0["name"]?.lowercased() else {
                 return false
             }
             
             return name.hasPrefix(term.lowercased())
-        }).compactMap({
-            
-            guard let name = $0["name"], let email = $0["email"] else {
-                return nil
-            }
-            
-            return SearchResult(name: name, email: email)
         })
-        
-        spinner.dismiss()
-                
-        self.results = results
-        
+            
+        //self.results = result
         updateUI()
     }
     
     func updateUI(){
-        if results.isEmpty {
-            noLabel.isHidden = false
-            tableView.isHidden = true
+        if users.isEmpty {
+            self.noLabel.isHidden = false
+            self.tableView.isHidden = true
         }else {
-            noLabel.isHidden = true
-            tableView.isHidden = false
-            tableView.reloadData()
+            self.noLabel.isHidden = true
+            self.tableView.isHidden = false
+            self.tableView.reloadData()
         }
     }
 }

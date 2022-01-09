@@ -8,6 +8,7 @@
 
 import Foundation
 import FirebaseDatabase
+import SwiftUI
 
 final class DatabaseManager{
     static let shared = DatabaseManager()
@@ -36,7 +37,8 @@ final class DatabaseManager{
     public func insertUser(with user:ChatUser, completion: @escaping (Bool) -> Void){
         database.child(user.safeEmail).setValue([
             "firstName":user.firstName,
-            "lastName":user.lastName
+            "lastName":user.lastName,
+            "profileImg":user.profileImage
         ], withCompletionBlock: {
             error , _ in
             guard error == nil else{
@@ -80,7 +82,7 @@ final class DatabaseManager{
     }
     
     public func getAllUsers(completion: @escaping (Result<[[String:String]], Error>) -> Void){
-        database.child("users").observeSingleEvent(of: .value, with: {
+        database.child("users").observeSingleEvent(of: .value) {
             snaphost in
             guard let users = snaphost.value as? [[String:String]] else {
                 completion(.failure(DatabaseError.failedToFetch))
@@ -88,7 +90,7 @@ final class DatabaseManager{
             }
             
             completion(.success(users))
-        })
+        }
     }
     
     public func getUserData(for email:String, completion: @escaping (Result<[String:Any], Error>) -> Void){

@@ -11,8 +11,7 @@ import FirebaseAuth
 import RealmSwift
 
 class HomeViewController: UIViewController {
-    
-    @IBOutlet weak var googleBtn : UIButton!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
