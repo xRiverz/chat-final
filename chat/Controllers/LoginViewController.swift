@@ -24,7 +24,7 @@ class LoginViewController: UIViewController {
         }
         
         @objc func didTapRegister(){
-            let registerVC = storyboard?.instantiateViewController(identifier: "RegisterVC") as! SignUppViewController
+            let registerVC = storyboard?.instantiateViewController(identifier: "Main") as! SignUppViewController
             navigationController?.pushViewController(registerVC, animated: true)
         }
 
