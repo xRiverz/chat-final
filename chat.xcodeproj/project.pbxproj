@@ -21,14 +21,12 @@
 		C38624372785FC96004ACA09 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = C38624362785FC96004ACA09 /* SDWebImage */; };
 		C38624392785FC96004ACA09 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = C38624382785FC96004ACA09 /* SDWebImageMapKit */; };
 		C386243E2785FD66004ACA09 /* burnt-toast-creative_16-5cd212882b759__880.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C386243B2785FD65004ACA09 /* burnt-toast-creative_16-5cd212882b759__880.jpg */; };
-		C386243F2785FD66004ACA09 /* ce9331ace9a49558e781da4c193e86b6.png.webp in Resources */ = {isa = PBXBuildFile; fileRef = C386243C2785FD65004ACA09 /* ce9331ace9a49558e781da4c193e86b6.png.webp */; };
 		C38624402785FD66004ACA09 /* burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = C386243D2785FD66004ACA09 /* burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg */; };
 		C38624422785FFB9004ACA09 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C38624412785FFB8004ACA09 /* GoogleService-Info.plist */; };
 		C386244527860B59004ACA09 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C386244427860B59004ACA09 /* LoginViewController.swift */; };
 		C3AA871827870B2B0041C300 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA871727870B2B0041C300 /* ProfileViewController.swift */; };
 		C3AA8721278723AF0041C300 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA8720278723AF0041C300 /* MessageViewController.swift */; };
 		C3AA8723278726680041C300 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA8722278726680041C300 /* NewMessageViewController.swift */; };
-		C3AA87292787303A0041C300 /* unnamed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3AA8728278730390041C300 /* unnamed.jpg */; };
 		C3AA872C278877C60041C300 /* GTMSessionFetcher in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA872B278877C60041C300 /* GTMSessionFetcher */; };
 		C3AA872E278877C60041C300 /* GTMSessionFetcherCore in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA872D278877C60041C300 /* GTMSessionFetcherCore */; };
 		C3AA8730278877C60041C300 /* GTMSessionFetcherFull in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA872F278877C60041C300 /* GTMSessionFetcherFull */; };
@@ -61,7 +59,6 @@
 		C3AA87672788C4F90041C300 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA87662788C4F90041C300 /* FirebaseStorage */; };
 		C3AA87692788C4F90041C300 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA87682788C4F90041C300 /* FirebaseStorageCombine-Community */; };
 		C3AA876B2788C4F90041C300 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA876A2788C4F90041C300 /* FirebaseStorageSwift-Beta */; };
-		C3AA87702789A79D0041C300 /* google copy.png in Resources */ = {isa = PBXBuildFile; fileRef = C3AA876F2789A79C0041C300 /* google copy.png */; };
 		C3AA87722789B0410041C300 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA87712789B0410041C300 /* StorageManager.swift */; };
 		C3AA87752789B42F0041C300 /* ProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = C3AA87742789B42F0041C300 /* ProgressHUD */; };
 		C3AA877F2789F27F0041C300 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3AA877E2789F27F0041C300 /* Extensions.swift */; };
@@ -82,7 +79,6 @@
 		C38624032785F8B6004ACA09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C38624052785F8B6004ACA09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C386243B2785FD65004ACA09 /* burnt-toast-creative_16-5cd212882b759__880.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "burnt-toast-creative_16-5cd212882b759__880.jpg"; path = "../../../burnt-toast-creative_16-5cd212882b759__880.jpg"; sourceTree = "<group>"; };
-		C386243C2785FD65004ACA09 /* ce9331ace9a49558e781da4c193e86b6.png.webp */ = {isa = PBXFileReference; lastKnownFileType = file; name = ce9331ace9a49558e781da4c193e86b6.png.webp; path = ../../../ce9331ace9a49558e781da4c193e86b6.png.webp; sourceTree = "<group>"; };
 		C386243D2785FD66004ACA09 /* burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg"; path = "../../../burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg"; sourceTree = "<group>"; };
 		C38624412785FFB8004ACA09 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C386244327860774004ACA09 /* chat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = chat.entitlements; sourceTree = "<group>"; };
@@ -90,9 +86,7 @@
 		C3AA871727870B2B0041C300 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C3AA8720278723AF0041C300 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C3AA8722278726680041C300 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
-		C3AA8728278730390041C300 /* unnamed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = unnamed.jpg; path = ../../../unnamed.jpg; sourceTree = "<group>"; };
 		C3AA8733278887490041C300 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		C3AA876F2789A79C0041C300 /* google copy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "google copy.png"; path = "../../../google copy.png"; sourceTree = "<group>"; };
 		C3AA87712789B0410041C300 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		C3AA877E2789F27F0041C300 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C3AA87802789F75A0041C300 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -185,11 +179,8 @@
 		C386243A2785FD53004ACA09 /* img */ = {
 			isa = PBXGroup;
 			children = (
-				C3AA876F2789A79C0041C300 /* google copy.png */,
-				C3AA8728278730390041C300 /* unnamed.jpg */,
 				C386243B2785FD65004ACA09 /* burnt-toast-creative_16-5cd212882b759__880.jpg */,
 				C386243D2785FD66004ACA09 /* burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg */,
-				C386243C2785FD65004ACA09 /* ce9331ace9a49558e781da4c193e86b6.png.webp */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -348,11 +339,8 @@
 			files = (
 				C38624042785F8B6004ACA09 /* LaunchScreen.storyboard in Resources */,
 				C38624402785FD66004ACA09 /* burnt-toast-illustration-freelance-hamilton-27g2S20.jpeg in Resources */,
-				C3AA87292787303A0041C300 /* unnamed.jpg in Resources */,
-				C3AA87702789A79D0041C300 /* google copy.png in Resources */,
 				C38624012785F8B6004ACA09 /* Assets.xcassets in Resources */,
 				C3AA87832789FB470041C300 /* MessageCell.xib in Resources */,
-				C386243F2785FD66004ACA09 /* ce9331ace9a49558e781da4c193e86b6.png.webp in Resources */,
 				C38623FC2785F8B2004ACA09 /* Main.storyboard in Resources */,
 				C386243E2785FD66004ACA09 /* burnt-toast-creative_16-5cd212882b759__880.jpg in Resources */,
 				C38624422785FFB9004ACA09 /* GoogleService-Info.plist in Resources */,
